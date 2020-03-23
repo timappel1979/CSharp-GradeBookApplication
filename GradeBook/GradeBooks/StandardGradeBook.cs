@@ -1,10 +1,12 @@
 ﻿using System;
-using GradeBook.GradeBooks;
 
-public class StandardGradeBook
+namespace GradeBook.GradeBooks
 {
-    public StandardGradeBook(string name) : base(BaseGradeBook)
+    public class StandardGradeBook : BaseGradeBook
     {
-        Type = GradeBookType.Standard;
+        public StandardGradeBook(string name) : base(name)
+        {
+            Type = GradeBookType.Standard;
+        }
     }
 }
