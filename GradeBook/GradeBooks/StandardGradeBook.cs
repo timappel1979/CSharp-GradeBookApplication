@@ -3,7 +3,7 @@ using GradeBook.GradeBooks;
 
 public class StandardGradeBook
 {
-    public StandardGradeBook(string name) : base(name)
+    public StandardGradeBook(string name) : base(BaseGradeBook)
     {
         Type = GradeBookType.Standard;
     }
