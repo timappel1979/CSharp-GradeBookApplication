@@ -21,7 +21,9 @@ namespace GradeBook.GradeBooks
 
             var gradeThreshhold = (int)Math.Ceiling(studentCount * 0.2);
 
-            var gradeOrder = Students.OrderByDecending(e => e.AverageGrade).ToList();
+            List<Student> st = Students;
+
+            var gradeOrder = st.OrderByDecending(e => e.AverageGrade).ToList();
 
             //var gradeOrder = from s in Students
             //                    orderby s.AverageGrade descending
