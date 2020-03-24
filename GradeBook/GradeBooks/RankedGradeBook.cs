@@ -23,7 +23,7 @@ namespace GradeBook.GradeBooks
 
             List<Student> st = Students;
 
-            var gradeOrder = st.OrderByDecending(e => e.AverageGrade).ToList();
+            var gradeOrder = st.OrderBy(e => e.AverageGrade).ToList();
 
             //var gradeOrder = from s in Students
             //                    orderby s.AverageGrade descending
