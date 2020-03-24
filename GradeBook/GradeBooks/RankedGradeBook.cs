@@ -25,16 +25,15 @@ namespace GradeBook.GradeBooks
                                 orderby s.AverageGrade descending
                                 select s;
 
-            if (gradeOrder[gradeThreshhold - 1] <= averageGrade)
+            var gradeOrderList = gradeOrder.ToList();
+
+            if (gradeOrderList[gradeThreshhold - 1] <= averageGrade)
                 return 'A';
-
-            else if (gradeOrder[(gradeThreshhold * 2) - 1] <= averageGrade)
+            else if (gradeOrderList[(gradeThreshhold * 2) - 1] <= averageGrade)
                 return 'B';
-
-            else if (gradeOrder[(gradeThreshhold * 3) - 1] <= averageGrade)
+            else if (gradeOrderList[(gradeThreshhold * 3) - 1] <= averageGrade)
                 return 'C';
-
-            else if (gradeOrder[(gradeThreshhold * 4) - 1] <= averageGrade)
+            else if (gradeOrderList[(gradeThreshhold * 4) - 1] <= averageGrade)
                 return 'D';
             else
                 return 'F';
