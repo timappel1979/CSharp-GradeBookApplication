@@ -25,9 +25,12 @@ namespace GradeBook.GradeBooks
 
             var gradeThreshhold = (int)Math.Ceiling(studentCount * 0.2);
 
-            List<Student> st = Students;
+            List<Student> st = new List<Student>();
 
-            var gradeOrder = st.OrderByDecending(e => e.AverageGrade).ToList();
+            var gradeOrder = st.OrderByDecending(e => e.AverageGrade);
+
+
+            //var gradeOrder = st.OrderByDecending(e => e.AverageGrade).ToList();
 
             if (gradeOrder[gradeThreshhold - 1] <= averageGrade)
                 return 'A';
