@@ -1,7 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+
 using GradeBook.Enums;
+using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace GradeBook.GradeBooks
 {
@@ -23,11 +27,7 @@ namespace GradeBook.GradeBooks
 
             List<Student> st = Students;
 
-            var gradeOrder = st.OrderBy(e => e.AverageGrade).ToList();
-
-            //var gradeOrder = from s in Students
-            //                    orderby s.AverageGrade descending
-            //                    select s;
+            var gradeOrder = st.OrderByDecending(e => e.AverageGrade).ToList();
 
             if (gradeOrder[gradeThreshhold - 1] <= averageGrade)
                 return 'A';
