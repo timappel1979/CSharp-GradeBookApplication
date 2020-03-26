@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-
 using GradeBook.Enums;
 using System.Collections.Generic;
 using System.IO;
@@ -31,13 +30,13 @@ namespace GradeBook.GradeBooks
                 var gradeThreshold = (int)Math.Ceiling(studentCount * 0.2);
                 var gradeOrder = students.OrderByDecending(e => e.AverageGrade).ToList();
 
-                if (gradeOrder[gradeThreshold - 1] <= averageGrade)
+                if (gradeOrder[gradeThreshold - 1].AverageGrade <= averageGrade)
                     return 'A';
-                else if (gradeOrder[(gradeThreshold * 2) - 1] <= averageGrade)
+                else if (gradeOrder[(gradeThreshold * 2) - 1].AverageGrade <= averageGrade)
                     return 'B';
-                else if (gradeOrder[(gradeThreshold * 3) - 1] <= averageGrade)
+                else if (gradeOrder[(gradeThreshold * 3) - 1].AverageGrade <= averageGrade)
                     return 'C';
-                else if (gradeOrder[(gradeThreshold * 4) - 1] <= averageGrade)
+                else if (gradeOrder[(gradeThreshold * 4) - 1].AverageGrade <= averageGrade)
                     return 'D';
                 else
                     return 'F';
