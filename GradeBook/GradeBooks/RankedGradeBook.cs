@@ -28,13 +28,13 @@ namespace GradeBook.GradeBooks
             var gradeThreshhold = (int)Math.Ceiling(studentCount * 0.2);
             var gradeOrder = students.OrderBy(e => e.AverageGrade).ToList();
 
-            if (gradeOrder[gradeThreshhold - 1] <= averageGrade)
+            if (gradeOrder[gradeThreshhold - 1].AverageGrade <= averageGrade)
                 return 'A';
-            else if (gradeOrder[(gradeThreshhold * 2) - 1] <= averageGrade)
+            else if (gradeOrder[(gradeThreshhold * 2) - 1].AverageGrade <= averageGrade)
                 return 'B';
-            else if (gradeOrder[(gradeThreshhold * 3) - 1] <= averageGrade)
+            else if (gradeOrder[(gradeThreshhold * 3) - 1].AverageGrade <= averageGrade)
                 return 'C';
-            else if (gradeOrder[(gradeThreshhold * 4) - 1] <= averageGrade)
+            else if (gradeOrder[(gradeThreshhold * 4) - 1].AverageGrade <= averageGrade)
                 return 'D';
             else
                 return 'F';
