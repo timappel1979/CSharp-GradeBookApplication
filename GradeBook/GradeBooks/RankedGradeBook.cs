@@ -18,15 +18,15 @@ namespace GradeBook.GradeBooks
 
         public override char GetLetterGrade(double averageGrade)
         {
-            //List<Student> students = new List<Student>();
+            List<Student> students = new List<Student>();
 
-            //var studentCount = students.Count;
+            var studentCount = students.Count;
 
-            if (Students.Count < 5)
+            if (studentCount < 5)
                 throw new System.InvalidOperationException("Ranked-grading requires a minimum of 5 students to work");
 
-            var gradeThreshold = (int)Math.Ceiling(Students.Count * 0.2);
-            var gradeOrder = Students.OrderByDecending(e => e.AverageGrade).Select(e => e.AverageGrade).ToList();
+            var gradeThreshold = (int)Math.Ceiling(studentCount * 0.2);
+            var gradeOrder = students.OrderByDecending(e => e.AverageGrade).Select(e => e.AverageGrade).ToList();
 
             if (gradeOrder[gradeThreshold - 1] <= averageGrade)
                 return 'A';
