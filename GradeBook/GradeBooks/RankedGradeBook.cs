@@ -20,6 +20,8 @@ namespace GradeBook.GradeBooks
         {
             List<Student> students = new List<Student>();
 
+            students = Students;
+
             var studentCount = students.Count;
 
             if (studentCount < 5)
